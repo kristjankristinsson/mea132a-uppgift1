@@ -16,3 +16,28 @@ VIDEO:  Record a video where you explain the two different ways (see above) of c
 */
 
 
+gridMaker(
+ document.getElementById("grid"),6,6);
+
+ function createNumberDiv () {
+         
+        let numbDiv = document.createElement("div");
+        numbDiv.innerHTML = randomNumber(100);
+
+        return numbDiv;
+ }
+
+ function gridMaker (gridContaioner, R, C) {
+
+ gridContaioner.style.gridTemplateRows = R + "fr";
+ gridContaioner.style.gridTemplateRows = C + "fr";
+
+ let total = R *C;
+ for (let i = 0; i < total; i++) {
+         gridContaioner.append( createNumberDiv() );
+ }
+
+}
+function randomNumber (max) {
+ return Math.floor(max * Math.random());
+} 

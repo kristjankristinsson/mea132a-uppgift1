@@ -45,10 +45,16 @@ VIDEO:  Record a video where you explain how averg works line by line. Max 3 min
 */
 
 // Copy your earlier function here
-function adder ( _array ) {}
+function adder ( _array ) {
+  let sum = 0;
+  for (let i = 0; i < _array.length; i++) {
+    sum = sum + _array[i];
+}
+return sum;
+}
 
 function averg ( _array ) {
-  // in here you must use adder
+ return adder(_array) / _array.length;
 }
 
 

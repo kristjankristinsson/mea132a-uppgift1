@@ -51,4 +51,21 @@ the classList.
 
 */
 
+function createNumberDiv () {
+
+    let numbDiv = document.createElement("div");
+
+    numbDiv.innerHTML = randomNumber(100);
+
+    numbDiv.addEventListener("click", function () {
+
+    numbDiv.classList.toggle("selected");
+
+    updateResults("selected");
+
+});
+
+return numbDiv;
+
+}
 

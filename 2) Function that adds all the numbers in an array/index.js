@@ -51,5 +51,11 @@ VIDEO:  Make a video where you explain how adder works line by line. Max 3 minut
         This video must be called adderExplanation.
 
 */
-
-
+function adder ( _array ) {
+  let sum = 0;
+  for (let i = 0; i < _array.length; i++) {
+  sum = sum + _array[i]; 
+  }
+  return sum;
+}
+console.log( adder([5, 2, 3, 4, 5, 6]));
