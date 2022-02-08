@@ -18,7 +18,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 
 // E1:  Add an input field of type number to the HTML-file
 
-console.log("test");
+
 // E2:  Give the input field the id "input_test_1"
 
 
@@ -43,7 +43,7 @@ console.log("test");
 //      document.querySelector("#input_test_1").value
 //      Log to the console the current value of #input_test_1. It should
 //      be 13, if you managed the previous E correctly.
-
+console.log(document.querySelector("#input_test_1").value);
 
 // E7:  Add a button <button> to the HTML-file.
 //      Give it the id "button_test_1"
@@ -53,13 +53,19 @@ console.log("test");
 //      the browser logs the current value of the input field on the console.
 //      Test this by manually changing the value of the input field. That is,
 //      by going to the webpage and changing that value.
-
+document.querySelector("#button_test_1").addEventListener("click", function () {
+    console.log(document.getElementById("input_test_1").value);
+});
 
 // E9:  NOTE that the value from the input field is a string, even if the input
 //      had type="number". You can see this in two ways:
 //      1) By the color the value has when logged to the console (white). Numbers are green.
 //      2) If you try + 1 to the value you get a concatenation (string) not an addition (number)
 //      Test both ways.
+console.log(1);
+const test = document.getElementById("input_test_1").value + 1;
+console.log(test);
+
 
 
 // E10: We want to transform the string "1" (for instance) into the number 1.
@@ -67,19 +73,23 @@ console.log("test");
 //      So parseInt("1") will return the number 1
 //      What will be logged in the lines below?
 let a = "23";
-// console.log( parseInt( a ) + 1 );
-// console.log( a + 1 );
-
+console.log( parseInt(a)+1);
+console.log(a + 1);
 
 // E11: Code a function (F1) that adds 23 to the number in the input field and
 //      logs the result to the console.
-
+function F1 () {
+    let adder = document.getElementById("input_test_1").value;
+    adder = parseInt(adder);
+    console.log(adder + 213);
+}
 
 // E12: Now make sure that F1 is called when the user clicks on #button_test_1
 //      Test it!
 // Note (once you're done) that the previous listener (added above) is still active and working.
 // We can have several listeners for the same event on the same element.
 
+document.getElementById("button_test_1").addEventListener("click", F1);
 
 
 //  By now, your code should log two lines:
